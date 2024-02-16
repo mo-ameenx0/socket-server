@@ -1,0 +1,13 @@
+NAME = 'name'
+PASSWORD = 'password'
+RESPONSE = 'response'
+SESSION_ID = 'session_id'
+
+SIGNUP = 'signup'
+LOGIN = 'login'
+LOGOUT = 'logout'
+HISTORY = 'history'
+LISTING = 'listing'
+DOWNLOAD = 'download'
+UPLOAD = 'upload'
+SEARCH = 'search'

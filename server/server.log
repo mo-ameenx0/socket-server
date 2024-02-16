@@ -1,0 +1,215 @@
+2024-02-16 11:32:15,810 [INFO] server: new connection made from ('127.0.0.1', 54883)
+2024-02-16 11:32:15,811 [INFO] server: data received
+2024-02-16 11:32:15,812 [INFO] server: signup called
+2024-02-16 11:32:15,874 [INFO] server: welcome tesdfdfting you are now signed up
+2024-02-16 11:32:15,875 [INFO] server: eof received
+2024-02-16 11:32:15,876 [INFO] server: connection closed
+2024-02-16 11:32:19,945 [INFO] server: new connection made from ('127.0.0.1', 54884)
+2024-02-16 11:32:19,945 [INFO] server: data received
+2024-02-16 11:32:19,946 [INFO] server: signup called
+2024-02-16 11:32:19,947 [INFO] server: user already signed up
+2024-02-16 11:32:19,948 [INFO] server: eof received
+2024-02-16 11:32:19,948 [INFO] server: connection closed
+2024-02-16 11:36:46,044 [INFO] server: new connection made from ('127.0.0.1', 54904)
+2024-02-16 11:36:46,045 [INFO] server: data received
+2024-02-16 11:36:46,045 [INFO] server: login called
+2024-02-16 11:36:46,052 [INFO] server: user already signed in
+2024-02-16 11:36:46,053 [INFO] server: eof received
+2024-02-16 11:36:46,054 [INFO] server: connection closed
+2024-02-16 11:38:21,029 [INFO] server: new connection made from ('127.0.0.1', 54908)
+2024-02-16 11:38:21,030 [INFO] server: data received
+2024-02-16 11:38:21,031 [INFO] server: login called
+2024-02-16 11:38:21,034 [INFO] server: user is not signed up
+2024-02-16 11:38:21,035 [INFO] server: eof received
+2024-02-16 11:38:21,036 [INFO] server: connection closed
+2024-02-16 11:38:29,320 [INFO] server: new connection made from ('127.0.0.1', 54909)
+2024-02-16 11:38:29,321 [INFO] server: data received
+2024-02-16 11:38:29,322 [INFO] server: signup called
+2024-02-16 11:38:29,404 [INFO] server: welcome tesdfdfting you are now signed up
+2024-02-16 11:38:29,405 [INFO] server: eof received
+2024-02-16 11:38:29,406 [INFO] server: connection closed
+2024-02-16 11:38:45,417 [INFO] server: new connection made from ('127.0.0.1', 54910)
+2024-02-16 11:38:45,418 [INFO] server: data received
+2024-02-16 11:38:45,419 [INFO] server: signup called
+2024-02-16 11:38:45,420 [INFO] server: user already signed up
+2024-02-16 11:38:45,421 [INFO] server: eof received
+2024-02-16 11:38:45,421 [INFO] server: connection closed
+2024-02-16 11:38:56,040 [INFO] server: new connection made from ('127.0.0.1', 54911)
+2024-02-16 11:38:56,041 [INFO] server: data received
+2024-02-16 11:38:56,042 [INFO] server: login called
+2024-02-16 11:38:56,045 [INFO] server: user already signed in
+2024-02-16 11:38:56,046 [INFO] server: eof received
+2024-02-16 11:38:56,047 [INFO] server: connection closed
+2024-02-16 11:39:31,957 [INFO] server: new connection made from ('127.0.0.1', 54914)
+2024-02-16 11:39:31,958 [INFO] server: data received
+2024-02-16 11:39:31,959 [INFO] server: login called
+2024-02-16 11:39:31,964 [INFO] server: user already signed in
+2024-02-16 11:39:31,965 [INFO] server: eof received
+2024-02-16 11:39:31,966 [INFO] server: connection closed
+2024-02-16 11:41:33,681 [INFO] server: new connection made from ('127.0.0.1', 54919)
+2024-02-16 11:41:33,682 [INFO] server: data received
+2024-02-16 11:41:33,682 [INFO] server: login called
+2024-02-16 11:41:33,688 [INFO] server: user already signed in
+2024-02-16 11:41:33,689 [INFO] server: eof received
+2024-02-16 11:41:33,691 [INFO] server: connection closed
+2024-02-16 11:42:40,072 [INFO] server: new connection made from ('127.0.0.1', 54922)
+2024-02-16 11:42:40,073 [INFO] server: data received
+2024-02-16 11:42:40,075 [INFO] server: login called
+2024-02-16 11:42:40,079 [INFO] server: bad request format {'name': 'tesdfdfting', 'password': 'sadfa2rf3'} it should be a dictionary
+2024-02-16 11:42:40,081 [INFO] server: eof received
+2024-02-16 11:42:40,081 [INFO] server: connection closed
+2024-02-16 11:44:05,129 [INFO] server: new connection made from ('127.0.0.1', 54928)
+2024-02-16 11:44:05,130 [INFO] server: data received
+2024-02-16 11:44:05,131 [INFO] server: login called
+2024-02-16 11:44:05,146 [INFO] server: welcome tesdfdfting you are now signed in
+2024-02-16 11:44:05,147 [INFO] server: eof received
+2024-02-16 11:44:05,147 [INFO] server: connection closed
+2024-02-16 11:44:15,675 [INFO] server: new connection made from ('127.0.0.1', 54929)
+2024-02-16 11:44:15,676 [INFO] server: data received
+2024-02-16 11:44:15,676 [INFO] server: login called
+2024-02-16 11:44:15,686 [INFO] server: welcome tesdfdfting you are now signed in
+2024-02-16 11:44:15,687 [INFO] server: eof received
+2024-02-16 11:44:15,687 [INFO] server: connection closed
+2024-02-16 11:45:47,382 [INFO] server: new connection made from ('127.0.0.1', 54932)
+2024-02-16 11:45:47,383 [INFO] server: data received
+2024-02-16 11:45:47,384 [INFO] server: login called
+2024-02-16 11:45:47,388 [INFO] server: user is not signed up
+2024-02-16 11:45:47,389 [INFO] server: eof received
+2024-02-16 11:45:47,389 [INFO] server: connection closed
+2024-02-16 11:45:55,570 [INFO] server: new connection made from ('127.0.0.1', 54933)
+2024-02-16 11:45:55,571 [INFO] server: data received
+2024-02-16 11:45:55,572 [INFO] server: signup called
+2024-02-16 11:45:55,653 [INFO] server: welcome tesdfdfting you are now signed up
+2024-02-16 11:45:55,654 [INFO] server: eof received
+2024-02-16 11:45:55,655 [INFO] server: connection closed
+2024-02-16 11:46:02,543 [INFO] server: new connection made from ('127.0.0.1', 54934)
+2024-02-16 11:46:02,544 [INFO] server: data received
+2024-02-16 11:46:02,544 [INFO] server: signup called
+2024-02-16 11:46:02,545 [INFO] server: user already signed up
+2024-02-16 11:46:02,546 [INFO] server: eof received
+2024-02-16 11:46:02,547 [INFO] server: connection closed
+2024-02-16 11:46:11,068 [INFO] server: new connection made from ('127.0.0.1', 54935)
+2024-02-16 11:46:11,069 [INFO] server: data received
+2024-02-16 11:46:11,070 [INFO] server: login called
+2024-02-16 11:46:11,155 [INFO] server: welcome tesdfdfting you are now signed in
+2024-02-16 11:46:11,156 [INFO] server: eof received
+2024-02-16 11:46:11,157 [INFO] server: connection closed
+2024-02-16 11:47:20,079 [INFO] server: new connection made from ('127.0.0.1', 54936)
+2024-02-16 11:47:20,080 [INFO] server: data received
+2024-02-16 11:47:20,081 [INFO] server: login called
+2024-02-16 11:47:20,082 [INFO] server: user already signed in
+2024-02-16 11:47:20,083 [INFO] server: eof received
+2024-02-16 11:47:20,084 [INFO] server: connection closed
+2024-02-16 13:57:16,699 [INFO] server: new connection made from ('127.0.0.1', 55805)
+2024-02-16 13:57:16,700 [INFO] server: data received
+2024-02-16 13:57:16,700 [INFO] server: login called
+2024-02-16 13:57:16,702 [INFO] server: user is not signed up
+2024-02-16 13:57:16,702 [INFO] server: eof received
+2024-02-16 13:57:16,702 [INFO] server: connection closed
+2024-02-16 13:57:26,082 [INFO] server: new connection made from ('127.0.0.1', 55806)
+2024-02-16 13:57:26,082 [INFO] server: data received
+2024-02-16 13:57:26,082 [INFO] server: signup called
+2024-02-16 13:57:26,088 [INFO] server: welcome tesdfdfting you are now signed up
+2024-02-16 13:57:26,089 [INFO] server: eof received
+2024-02-16 13:57:26,089 [INFO] server: connection closed
+2024-02-16 13:57:28,298 [INFO] server: new connection made from ('127.0.0.1', 55807)
+2024-02-16 13:57:28,298 [INFO] server: data received
+2024-02-16 13:57:28,298 [INFO] server: signup called
+2024-02-16 13:57:28,299 [INFO] server: user already signed up
+2024-02-16 13:57:28,299 [INFO] server: eof received
+2024-02-16 13:57:28,299 [INFO] server: connection closed
+2024-02-16 13:57:50,698 [INFO] server: new connection made from ('127.0.0.1', 55808)
+2024-02-16 13:57:50,698 [INFO] server: data received
+2024-02-16 13:57:50,699 [INFO] server: login called
+2024-02-16 13:57:50,701 [INFO] server: bad request format {'name': 'tesdfdfting', 'password': 'sadfa2rf3'} it should be a dictionary
+2024-02-16 13:57:50,701 [INFO] server: eof received
+2024-02-16 13:57:50,701 [INFO] server: connection closed
+2024-02-16 13:58:25,547 [INFO] server: new connection made from ('127.0.0.1', 55811)
+2024-02-16 13:58:25,547 [INFO] server: data received
+2024-02-16 13:58:25,548 [INFO] server: login called
+2024-02-16 13:58:25,550 [INFO] server: Algorithm not supported
+2024-02-16 13:59:02,870 [INFO] server: new connection made from ('127.0.0.1', 55814)
+2024-02-16 13:59:02,870 [INFO] server: data received
+2024-02-16 13:59:02,870 [INFO] server: login called
+2024-02-16 13:59:02,873 [INFO] server: Algorithm not supported
+2024-02-16 13:59:02,874 [INFO] server: eof received
+2024-02-16 13:59:02,874 [INFO] server: connection closed
+2024-02-16 13:59:26,683 [INFO] server: new connection made from ('127.0.0.1', 55817)
+2024-02-16 13:59:26,683 [INFO] server: data received
+2024-02-16 13:59:26,683 [INFO] server: login called
+2024-02-16 13:59:26,686 [INFO] server: Algorithm 'RS256' could not be found. Do you have cryptography installed?
+2024-02-16 13:59:26,687 [INFO] server: eof received
+2024-02-16 13:59:26,687 [INFO] server: connection closed
+2024-02-16 14:01:31,091 [INFO] server: new connection made from ('127.0.0.1', 55875)
+2024-02-16 14:01:31,092 [INFO] server: data received
+2024-02-16 14:01:31,092 [INFO] server: login called
+2024-02-16 14:01:31,093 [INFO] server: Algorithm 'RS256' could not be found. Do you have cryptography installed?
+2024-02-16 14:01:31,093 [INFO] server: eof received
+2024-02-16 14:01:31,094 [INFO] server: connection closed
+2024-02-16 14:01:47,379 [INFO] server: new connection made from ('127.0.0.1', 55878)
+2024-02-16 14:01:47,379 [INFO] server: data received
+2024-02-16 14:01:47,380 [INFO] server: login called
+2024-02-16 14:01:47,382 [INFO] server: Expected a string value
+2024-02-16 14:01:47,383 [INFO] server: eof received
+2024-02-16 14:01:47,383 [INFO] server: connection closed
+2024-02-16 14:02:19,611 [INFO] server: new connection made from ('127.0.0.1', 55881)
+2024-02-16 14:02:19,612 [INFO] server: data received
+2024-02-16 14:02:19,612 [INFO] server: login called
+2024-02-16 14:02:19,614 [INFO] server: Expected a string value
+2024-02-16 14:02:19,615 [INFO] server: eof received
+2024-02-16 14:02:19,615 [INFO] server: connection closed
+2024-02-16 14:02:57,442 [INFO] server: new connection made from ('127.0.0.1', 55890)
+2024-02-16 14:02:57,442 [INFO] server: data received
+2024-02-16 14:02:57,442 [INFO] server: login called
+2024-02-16 14:02:57,450 [INFO] server: {'session_id': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ0ZXNkZmRmdGluZyIsInVzZXJfaWQiOiIxIiwiZXhwIjoxNzA4MDgxNDM3fQ.jyQW1VF6eVsdJNEhqlJvHCyMuxsFYMqGOyzEdPZmy4g', 'message': 'welcome tesdfdfting you are now loged in'}
+2024-02-16 14:02:57,450 [INFO] server: 'dict' object has no attribute 'encode'
+2024-02-16 14:02:57,450 [INFO] server: eof received
+2024-02-16 14:02:57,452 [INFO] server: connection closed
+2024-02-16 14:04:25,562 [INFO] server: new connection made from ('127.0.0.1', 55900)
+2024-02-16 14:04:25,563 [INFO] server: data received
+2024-02-16 14:04:25,563 [INFO] server: login called
+2024-02-16 14:04:25,566 [INFO] server: user already loged in
+2024-02-16 14:04:25,566 [INFO] server: eof received
+2024-02-16 14:04:25,567 [INFO] server: connection closed
+2024-02-16 14:05:06,625 [INFO] server: new connection made from ('127.0.0.1', 55903)
+2024-02-16 14:05:06,626 [INFO] server: data received
+2024-02-16 14:05:06,626 [INFO] server: login called
+2024-02-16 14:05:06,627 [INFO] server: user is not signed up
+2024-02-16 14:05:06,628 [INFO] server: eof received
+2024-02-16 14:05:06,628 [INFO] server: connection closed
+2024-02-16 14:05:14,777 [INFO] server: new connection made from ('127.0.0.1', 55904)
+2024-02-16 14:05:14,777 [INFO] server: data received
+2024-02-16 14:05:14,778 [INFO] server: signup called
+2024-02-16 14:05:14,783 [INFO] server: welcome tesdfdfting you are now signed up
+2024-02-16 14:05:14,783 [INFO] server: eof received
+2024-02-16 14:05:14,783 [INFO] server: connection closed
+2024-02-16 14:05:34,681 [INFO] server: new connection made from ('127.0.0.1', 55911)
+2024-02-16 14:05:34,681 [INFO] server: data received
+2024-02-16 14:05:34,681 [INFO] server: signup called
+2024-02-16 14:05:34,682 [INFO] server: user already signed up
+2024-02-16 14:05:34,682 [INFO] server: eof received
+2024-02-16 14:05:34,682 [INFO] server: connection closed
+2024-02-16 14:05:41,665 [INFO] server: new connection made from ('127.0.0.1', 55912)
+2024-02-16 14:05:41,665 [INFO] server: data received
+2024-02-16 14:05:41,665 [INFO] server: login called
+2024-02-16 14:05:41,667 [INFO] server: Expected a string value
+2024-02-16 14:05:41,667 [INFO] server: eof received
+2024-02-16 14:05:41,668 [INFO] server: connection closed
+2024-02-16 14:08:27,792 [INFO] server: new connection made from ('127.0.0.1', 55970)
+2024-02-16 14:08:27,793 [INFO] server: data received
+2024-02-16 14:08:27,793 [INFO] server: login called
+2024-02-16 14:08:27,797 [INFO] server: Expected a string value
+2024-02-16 14:08:27,797 [INFO] server: eof received
+2024-02-16 14:08:27,797 [INFO] server: connection closed
+2024-02-16 14:09:27,756 [INFO] server: new connection made from ('127.0.0.1', 55979)
+2024-02-16 14:09:27,757 [INFO] server: data received
+2024-02-16 14:09:27,757 [INFO] server: login called
+2024-02-16 14:09:27,766 [INFO] server: {'session_id': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ0ZXNkZmRmdGluZyIsInVzZXJfaWQiOjEsImV4cCI6MTcwODA4MTgyN30.V9f2-K4-liEtCBgjsxwcMBGYnNWoVDY_xEshgDVUdXc', 'message': 'welcome tesdfdfting you are now loged in'}
+2024-02-16 14:09:27,766 [INFO] server: eof received
+2024-02-16 14:09:27,766 [INFO] server: connection closed
+2024-02-16 14:09:47,586 [INFO] server: new connection made from ('127.0.0.1', 55980)
+2024-02-16 14:09:47,586 [INFO] server: data received
+2024-02-16 14:09:47,586 [INFO] server: login called
+2024-02-16 14:09:47,587 [INFO] server: user already loged in
+2024-02-16 14:09:47,588 [INFO] server: eof received
+2024-02-16 14:09:47,588 [INFO] server: connection closed
