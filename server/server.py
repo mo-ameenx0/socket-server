@@ -46,7 +46,7 @@ class Server(Protocol):
                     logger.info(str(e))
                     self.write({RESPONSE: 'bad request format'})
                     return
-                method(data, self.write)
+                method(data, self.write, self.transport.close)
                 return
             except Exception as e:
                 logger.info(str(e))

@@ -18,21 +18,25 @@ from constants import *
 def required_keys(keys=[NAME, PASSWORD]):
     def decorator(func):
         @wraps(func)
-        def wrapped_function(request, write):            
+        def wrapped_function(request, write, close):      
             for key in keys:
                 if not key in request.keys():
-                    return {RESPONSE: f'the request is missing {key}'}
+                    write({RESPONSE: f'the request is missing {key}'})
+                    close()
+                    return
 
                 value = request.get(key)
                 if value is None or value == '':
-                    return {RESPONSE: f'the value for {key} is not valid'}
+                    write({RESPONSE: f'the value for {key} is not valid'})
+                    close()
+                    return
 
-            return func(request, write)
+            return func(request, write, close)
         return wrapped_function
     return decorator
 
 def verify_session_id(func):
-    def wrapper(request, write):
+    def wrapper(request, write, close):
         session_id = request.get(SESSION_ID)
 
         try:            
@@ -40,18 +44,22 @@ def verify_session_id(func):
         except Exception as e:
             delete_user_session(session_id)
             if isinstance(e, jwt.ExpiredSignatureError):
-                return {RESPONSE: 'login again the session id has expired'}
-            return {RESPONSE: 'the session id is not valid'}
-
+                write({RESPONSE: 'login again the session id has expired'})
+                close()
+                return
+            write({RESPONSE: 'the session id is not valid'})
+            close()
+            return
+        
         request[SESSION_ID] = decoded_session_id
 
-        return func(request, write)
+        return func(request, write, close)
     
     return wrapper
 
 
 @required_keys([NAME, PASSWORD])
-def signup(request, write):
+def signup(request, write, close):
     name = request.get(NAME)
     password = request.get(PASSWORD)
 
@@ -62,7 +70,7 @@ def signup(request, write):
 
 
 @required_keys([NAME, PASSWORD])
-def login(request, write):
+def login(request, write, close):
     name = request.get(NAME)
     password = request.get(PASSWORD)
 
@@ -72,7 +80,7 @@ def login(request, write):
 
 @required_keys([SESSION_ID])
 @verify_session_id
-def logout(request, write):
+def logout(request, write, close):
     session_id = request.get(SESSION_ID)
 
     user_id = session_id.get(USER_ID)
@@ -83,14 +91,14 @@ def logout(request, write):
 
 @required_keys([SESSION_ID])
 @verify_session_id
-def history(request, write):
+def history(request, write, close):
     session_id = request.get(SESSION_ID)
 
 
 
 @required_keys([SESSION_ID])
 @verify_session_id
-def listing(request, write):
+def listing(request, write, close):
     session_id = request.get(SESSION_ID)
 
     name = session_id.get(NAME)
@@ -101,7 +109,7 @@ def listing(request, write):
 
 @required_keys([SESSION_ID, FILE_NAME])
 @verify_session_id
-def download(request, write):
+def download(request, write, close):
     session_id = request.get(SESSION_ID)
 
     name = session_id.get(NAME)
@@ -109,17 +117,36 @@ def download(request, write):
 
     log_download_history(name, file_name)
 
+    file_path = get_file_path(name, file_name)
+
+    if not os.path.exists(file_path):
+        write({RESPONSE: 'closing download'})
+        write({RESPONSE: f'no file with the name {file_name}'})
+        close()
+        return
+    
+    with open(get_file_path(name, file_name), 'rb') as f:
+        while True:
+            data = f.read(1024)
+            if not data:
+                break
+            write(data)
+
+        close()
+
 @required_keys([SESSION_ID, FILE_NAME, FILE_CHUNK])
 @verify_session_id
-def upload(request, write):
+def upload(request, write, close):
     session_id = request.get(SESSION_ID)
 
     name = session_id.get(NAME)
     file_name = request.get(FILE_NAME)
     file_chunk = request.get(FILE_CHUNK)
 
-    if file_chunk == 0:
+
+    if file_chunk == '0':
         write('file upload completed')
+        return
 
     file_chunk = base64.b64decode(file_chunk.encode())
 
@@ -130,13 +157,13 @@ def upload(request, write):
 
 @required_keys([SESSION_ID, FILE_NAME])
 @verify_session_id
-def search(request, write):
+def search(request, write, close):
     session_id = request.get(SESSION_ID)
 
     name = session_id.get(NAME)
     file_name = request.get(FILE_NAME)
 
-    return search_for_file(name, file_name)
+    write({RESPONSE: search_for_file(name, file_name)})
 
 
 METHODS = {

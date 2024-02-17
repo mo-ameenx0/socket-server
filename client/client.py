@@ -73,7 +73,7 @@ def get_args(args=None):
 
 def send_request(request:str):
     from time import sleep
-    sleep(0.1)
+    sleep(0.01)
     client.sendall(request.encode('utf-8'))
 
 
@@ -85,7 +85,7 @@ def main():
         client.connect((HOST, int(PORT)))
         
         if not args.persistent:
-            parse_methods(args, send_request)
+            parse_methods(args, send_request, client.recv)
             response = client.recv(RECEIVE_BUFFER_SIZE)
             print(response)
             return
@@ -95,7 +95,7 @@ def main():
                 user_args = input('enter your args:\n')
                 user_args = user_args+" --persistent --useargs"
                 args = get_args(user_args.split())
-                parse_methods(args, send_request)
+                parse_methods(args, send_request, client.recv)
                 response = client.recv(RECEIVE_BUFFER_SIZE)
                 print(response, end='\n\n')
             else:

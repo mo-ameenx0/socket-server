@@ -5,7 +5,7 @@ import base64
 
 from constants import *
 
-def parse_methods(args, send_request):
+def parse_methods(args, send_request, recv):
     if args.signup:
         send_request(
             signup(args.name, args.password)
@@ -27,9 +27,7 @@ def parse_methods(args, send_request):
         )
 
     elif args.download:
-        send_request(
-            download(args.session_id, args.file_name)
-        )
+        download(send_request, recv, args.session_id, args.file_name)
     
     elif args.upload:
         upload(send_request, args.session_id, args.file_path)
@@ -82,12 +80,21 @@ def listing(session_id):
         {SESSION_ID: session_id}
     )
 
-FILE_CHUNK_SIZE = 10240
-def download(session_id, file_name):
-    return genereat_request(
-        DOWNLOAD,
-        {SESSION_ID: session_id, FILE_NAME: file_name}
+FILE_CHUNK_SIZE = 1024
+def download(send_request, recv, session_id, file_name):
+    send_request(
+        genereat_request(
+            DOWNLOAD,
+            {SESSION_ID: session_id, FILE_NAME: file_name}
+        )
     )
+
+    with open(file_name, 'wb') as file:
+        while True:
+            data = recv(FILE_CHUNK_SIZE)
+            if not data:
+                break
+            file.write(data)
 
 def upload(send_request, session_id, file_path:str):
     file_name = ntpath.basename(file_path)
