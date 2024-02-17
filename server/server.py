@@ -1,4 +1,5 @@
 import ast
+import base64
 
 from asyncio import Protocol, BaseTransport
 
@@ -27,25 +28,25 @@ class Server(Protocol):
 
     def data_received(self, data):
         logger.info('data received')
+
         data = data.decode('utf-8')
-        
+
         data = data.split('|')
         method_name = data[0]
         method = METHODS.get(method_name)
-        
+
         if method:
             try:
                 logger.info(f'{method_name} called')
                 try:
-                    data = ast.literal_eval(data[1])
+                    data = data[1].encode()
+                    data = base64.b64decode(data).decode('utf-8')
+                    data = ast.literal_eval(data)
                 except Exception as e:
-                    response = 'bad request format'
-                    logger.info(response)
-                    self.write({RESPONSE: response})
+                    logger.info(str(e))
+                    self.write({RESPONSE: 'bad request format'})
                     return
-                response = method(data)
-                logger.info(response)
-                self.write(response)
+                method(data, self.write)
                 return
             except Exception as e:
                 logger.info(str(e))
@@ -60,7 +61,7 @@ class Server(Protocol):
         self.transport = None
 
         if exc:
-            logger.info('an exception occured when closing the connection')
+            logger.info(f'an exception occured when closing the connection {exc}')
             return
         
         logger.info('connection closed')

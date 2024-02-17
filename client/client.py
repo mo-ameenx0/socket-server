@@ -34,7 +34,7 @@ def get_args(args=None):
 
     # Miscellaneous actions
     parser.add_argument('--history', action='store_true', help='View the user\'s action history.')
-    parser.add_argument('--search', type=str, help='Search for files using the specified query string.')
+    parser.add_argument('--search', action='store_true', help='Search for files using the specified query string.')
     parser.add_argument('--persistent', action='store_true', help='Enable a persistent connection for the session.')
     parser.add_argument('--useargs', action='store_true', help='Use the arguments with persistent connections. Requires --persistent.')
 
@@ -66,10 +66,15 @@ def get_args(args=None):
     if args.download and not args.file_name:
         parser.error('--download requires --file_name.')
 
+    if args.search and not args.file_name:
+        parser.error('--search requires --file_name.')
+
     return args
 
 def send_request(request:str):
-    client.sendall(request.encode())
+    from time import sleep
+    sleep(0.1)
+    client.sendall(request.encode('utf-8'))
 
 
 RECEIVE_BUFFER_SIZE = 1024

@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from datetime import datetime, timezone, timedelta
 
 from constants import *
+from files import create_folder
 
 load_dotenv()
 SECRET = os.environ.get('SECRET')
@@ -42,6 +43,8 @@ def signup_user(name, password):
 
     conn.commit()
 
+    create_folder(name)
+
     return {RESPONSE: f'welcome {name} you are now signed up'}
 
 def login_user(name, password):
@@ -69,7 +72,7 @@ def login_user(name, password):
         {
             'name': name, 
             'user_id': user_id, 
-            'exp': datetime.now(tz=timezone.utc) + timedelta(seconds=5000)
+            'exp': datetime.now(timezone(timedelta(hours=3))) + timedelta(seconds=500)
         },
         SECRET
     )
@@ -133,13 +136,3 @@ def is_user_loged_in(user_id):
         return True
     
     return False
-
-def is_user_loged_out(session_id):
-    cur = conn.execute(
-        sessions_table.select().where(sessions_table.columns.SESSION_ID == session_id)
-    )
-
-    if cur.fetchone():
-        return False
-    
-    return True

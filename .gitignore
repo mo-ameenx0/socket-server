@@ -28,3 +28,5 @@ __pycache__
 
 server.log
 users.sqlite
+
+users

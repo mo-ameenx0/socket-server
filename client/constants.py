@@ -4,6 +4,7 @@ RESPONSE = 'response'
 SESSION_ID = 'session_id'
 USER_ID = 'user_id'
 FILE_NAME = 'file_name'
+FILE_CHUNK = 'file_chunk'
 
 SIGNUP = 'signup'
 LOGIN = 'login'

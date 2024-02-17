@@ -20,7 +20,7 @@ LOGGING_CONFIG = {
             'filename': 'server.log',
             'mode': 'a',
             'maxBytes': 1048576,
-            'backupCount': 10
+            'backupCount': 1
         },
     },
     'loggers': {
