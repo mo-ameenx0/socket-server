@@ -29,28 +29,28 @@ sessions_table = db.Table(
 
 metadata.create_all(engine)
 
-def signup_user(user_name, password):   
-    if is_user_signed_up(user_name):
+def signup_user(name, password):   
+    if is_user_signed_up(name):
         return {RESPONSE: 'user already signed up'}
     
     cur = conn.execute(
         users_table.insert().values(
-            NAME=user_name,
+            NAME=name,
             PASSWORD=password
         )
     )
 
     conn.commit()
 
-    return {RESPONSE: f'welcome {user_name} you are now signed up'}
+    return {RESPONSE: f'welcome {name} you are now signed up'}
 
-def login_user(user_name, password):
-    if not is_user_signed_up(user_name):
-        return 'user is not signed up'
+def login_user(name, password):
+    if not is_user_signed_up(name):
+        return {RESPONSE: 'user is not signed up'}
     
     cur = conn.execute(
         users_table.select().where(
-            users_table.columns.NAME == user_name,
+            users_table.columns.NAME == name,
             users_table.columns.PASSWORD == password
         )
     )
@@ -67,9 +67,9 @@ def login_user(user_name, password):
 
     session_id = jwt.encode(
         {
-            'user_name': user_name, 
+            'name': name, 
             'user_id': user_id, 
-            'exp': datetime.now(tz=timezone.utc) + timedelta(seconds=60)
+            'exp': datetime.now(tz=timezone.utc) + timedelta(seconds=5000)
         },
         SECRET
     )
@@ -85,12 +85,38 @@ def login_user(user_name, password):
 
     return {
         SESSION_ID: session_id,
-        RESPONSE: f'welcome {user_name} you are now loged in'
+        RESPONSE: f'welcome {name} you are now loged in'
     }
 
-def is_user_signed_up(user_name):
+def logout_user(name, user_id):
     cur = conn.execute(
-        users_table.select().where(users_table.columns.NAME == user_name)
+        sessions_table.select().where(sessions_table.columns.USER_ID == user_id)
+    )
+
+    if not cur.fetchone():
+        return {RESPONSE: f'{name} already loged out'}
+
+
+    cur = conn.execute(
+       sessions_table.delete().where(sessions_table.columns.USER_ID == user_id)
+    )
+
+    conn.commit()
+
+    return {
+        RESPONSE: f'see you again {name}'
+    }
+
+def delete_user_session(session_id):
+    cur = conn.execute(
+       sessions_table.delete().where(sessions_table.columns.SESSION_ID == session_id)
+    )
+
+    conn.commit()
+
+def is_user_signed_up(name):
+    cur = conn.execute(
+        users_table.select().where(users_table.columns.NAME == name)
     )
 
     if cur.fetchone():
@@ -107,3 +133,13 @@ def is_user_loged_in(user_id):
         return True
     
     return False
+
+def is_user_loged_out(session_id):
+    cur = conn.execute(
+        sessions_table.select().where(sessions_table.columns.SESSION_ID == session_id)
+    )
+
+    if cur.fetchone():
+        return False
+    
+    return True

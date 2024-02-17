@@ -1,4 +1,4 @@
-import json
+import ast
 
 from asyncio import Protocol, BaseTransport
 
@@ -36,7 +36,13 @@ class Server(Protocol):
         if method:
             try:
                 logger.info(f'{method_name} called')
-                data = json.loads(data[1])
+                try:
+                    data = ast.literal_eval(data[1])
+                except Exception as e:
+                    response = 'bad request format'
+                    logger.info(response)
+                    self.write({RESPONSE: response})
+                    return
                 response = method(data)
                 logger.info(response)
                 self.write(response)
