@@ -41,7 +41,7 @@ PORT=12345
 Navigate to the `server` directory and start the server using:
 
 ```bash
-python server.py
+python main.py
 ```
 
 ### Running the Client
